@@ -16,7 +16,11 @@ public class CursorParticleOnClick : MonoBehaviour
         if (ctx.performed)
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            Instantiate(clickParticleSys, pos, Quaternion.identity);
+            // Instantiate(clickParticleSys, pos, Quaternion.identity);
+            GameObject particle = Instantiate(clickParticleSys);
+            particle.transform.parent = this.gameObject.transform;
+            particle.transform.localPosition = pos;
+
             _audioSource.PlayOneShot(_audioSource.clip);
             // randomize pitch of audio
         }

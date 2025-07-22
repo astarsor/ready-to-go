@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public Camera uiCamera;
-    public GameObject mainMenuCanvas;
+    private Camera _cam;
+    // public GameObject mainMenuCanvas;
+    public float distanceToGameScene = 8f;
+    public float moveYDuration = 7f;
     void Awake()
     {
         if (instance == null)
@@ -18,6 +21,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        _cam = Camera.main;
+        _cam.transform.position = new Vector3 (_cam.transform.position.x, -distanceToGameScene, _cam.transform.position.z);
     }
 
     // Update is called once per frame
@@ -28,6 +34,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        // move uiCamera up
+        _cam.transform.DOMoveY(0, moveYDuration, true).SetEase(Ease.InElastic, 1);  //make overshoot public float 
     }
 }
