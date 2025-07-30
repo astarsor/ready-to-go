@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+[DefaultExecutionOrder(0)]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private Camera _cam;
-    // public GameObject mainMenuCanvas;
-    public float distanceToGameScene = 8f;
+    public int universalFPS = 24;
+    [Space(5)]
+    public float distanceToGameScene = 12f;
+    public float distanceToResultScene = 15f;
+    [Space(5)]
     public float moveYDuration = 7f;
+
     void Awake()
     {
         if (instance == null)
@@ -23,17 +28,21 @@ public class GameManager : MonoBehaviour
         }
 
         _cam = Camera.main;
-        _cam.transform.position = new Vector3 (_cam.transform.position.x, -distanceToGameScene, _cam.transform.position.z);
+        _cam.transform.position = new Vector3(_cam.transform.position.x, -distanceToGameScene, _cam.transform.position.z);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
+    public void MoveToGame() // called through PlayButton obj
+    {
+        _cam.transform.DOMoveY(0, moveYDuration).SetEase(EaseFactory.StopMotion(universalFPS, Ease.InOutBack));
     }
-
-    public void StartGame()
+    public void MoveToResults()
     {
-        _cam.transform.DOMoveY(0, moveYDuration, true).SetEase(Ease.InElastic, 1);  //make overshoot public float 
+        _cam.transform.DOMoveY(distanceToResultScene, moveYDuration).SetEase(EaseFactory.StopMotion(universalFPS, Ease.InOutBack));
+    }
+    public void RestartGame()   // for "again?" button on results screen
+    {
+        Debug.Log("RESTARTING GAME");
+        _cam.transform.position = new Vector3(_cam.transform.position.x, -distanceToGameScene, _cam.transform.position.z);
     }
 }

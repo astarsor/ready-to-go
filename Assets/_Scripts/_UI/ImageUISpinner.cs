@@ -11,9 +11,9 @@ public class ImageUISpinner : MonoBehaviour
         _myTransform = GetComponent<RectTransform>();
     }
 
+// make into tween. use universalFPS
     void Update()
     {
-        // _myTransform.rotation = Quaternion.Euler(0, 1 * Time.deltaTime * spinSpeed, 0) ;
         _myTransform.Rotate(new Vector3(0, 1, 0), spinSpeed * Time.deltaTime);
     }
 }

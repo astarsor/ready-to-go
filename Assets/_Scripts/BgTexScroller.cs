@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class BgTexScroller : MonoBehaviour
 {
-    public static BgTexScroller instance;
+    // public static BgTexScroller instance;
     public float speedX, speedY;
 
 	float _uvFactor;
@@ -13,15 +13,15 @@ public class BgTexScroller : MonoBehaviour
     private float _currentX, _currentY;
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        // if (instance == null)
+        // {
+        //     instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
+        // else
+        // {
+        //     Destroy(gameObject);
+        // }
 
         _materialToScroll = GetComponent<MeshRenderer>().material;
         float n = _materialToScroll.GetTextureScale("_MainTex").y;

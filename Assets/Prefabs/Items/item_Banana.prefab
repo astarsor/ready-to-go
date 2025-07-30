@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6d360bec64cab4e6b98e9c619c39ea03,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 16.03
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d360bec64cab4e6b98e9c619c39ea03,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 16.03
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d360bec64cab4e6b98e9c619c39ea03,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 16.03
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d360bec64cab4e6b98e9c619c39ea03,
         type: 3}
@@ -106,6 +106,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8321737102992719461}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d360bec64cab4e6b98e9c619c39ea03,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5852496772996000594}
   m_SourcePrefab: {fileID: 100100000, guid: 6d360bec64cab4e6b98e9c619c39ea03, type: 3}
 --- !u!1 &1395339274760633837 stripped
 GameObject:
@@ -130,3 +134,17 @@ MonoBehaviour:
     value: 1
   - enumDescriptors: 2
     value: 0.25
+--- !u!114 &5852496772996000594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395339274760633837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2e890bc302e41ce86cc199fda69d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobHeight: 0.51
+  bobDuration: 2.08
