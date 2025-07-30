@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class DescriptorsHolder : MonoBehaviour
 {
-    // public SO_ItemDescriptor[] itemDescriptor;
-    [SerializeField] private Descriptors[] _descriptors;
+    public Descriptors[] descriptors;
 }
 
 [System.Serializable]
 public class Descriptors
 {
     public EnumDescriptors enumDescriptors;
-    [Range(0, 1)] public float value;
+    [Range(0, 1)] public float value = 1f;
 }
 public enum EnumDescriptors
 {

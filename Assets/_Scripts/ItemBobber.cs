@@ -10,24 +10,19 @@ public class ItemBobber : MonoBehaviour
 
     void Start()
     {
-        Bobber();
+        // Bobber();
+        Sequence bobberSequence = DOTween.Sequence();
+        float targetPos = transform.position.y + bobHeight;
+        
+        bobberSequence.Append(transform.DOMoveY(targetPos, bobDuration)).SetEase(Ease.InOutSine);
+        bobberSequence.SetLoops(-1, LoopType.Yoyo).Play();
     }
 
     public void Bobber()
     {
         Sequence bobberSequence = DOTween.Sequence();
         float targetPos = transform.position.y + bobHeight;
-        // transform.DOMoveY(targetPos, bobDuration)
-        //     .SetEase(EaseFactory.StopMotion(GameManager.instance.universalFPS, Ease.InOutSine))
-        //     .SetLoops(-1, LoopType.Yoyo);
 
-        // bobberSequence.Append(transform.DOMoveY(targetPos, bobDuration)
-        // .SetEase(EaseFactory.StopMotion(GameManager.instance.universalFPS, Ease.InOutSine))
-        // );
-        // bobberSequence.SetLoops(-1, LoopType.Yoyo).Play();
-
-
-/// test ////
         bobberSequence.Append(transform.DOMoveY(targetPos, bobDuration)).SetEase(Ease.InOutSine);
         bobberSequence.SetLoops(-1, LoopType.Yoyo).Play();
 

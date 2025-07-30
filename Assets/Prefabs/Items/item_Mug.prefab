@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c473af8ef98e94fc5a16c224a06ac56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _descriptors:
-  - enumDescriptors: 0
+  descriptors:
+  - enumDescriptors: 1
     value: 1
 --- !u!114 &8497085586449743888
 MonoBehaviour:
