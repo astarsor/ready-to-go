@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4188ff828a2d54a55ba9946b45cb1864,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71fe0ebd440994903a5dd1ca3ff638a2, type: 2}
     - target: {fileID: 919132149155446097, guid: 4188ff828a2d54a55ba9946b45cb1864,
         type: 3}
       propertyPath: m_Name
@@ -87,6 +92,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4188ff828a2d54a55ba9946b45cb1864,
+        type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -100,6 +110,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2138457874522777151}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4188ff828a2d54a55ba9946b45cb1864,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76515552999712389}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4188ff828a2d54a55ba9946b45cb1864,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7701001695871207572}
   m_SourcePrefab: {fileID: 100100000, guid: 4188ff828a2d54a55ba9946b45cb1864, type: 3}
 --- !u!1 &4156330571051711540 stripped
 GameObject:
@@ -136,3 +154,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bobHeight: 0.61
   bobDuration: 2.68
+--- !u!65 &76515552999712389
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156330571051711540}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.10773203, y: 0.12503259, z: 0.028888784}
+  m_Center: {x: 0, y: 0.0645163, z: -0.00019507622}
+--- !u!114 &7701001695871207572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156330571051711540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd98aec6f55954d24a19738890752bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

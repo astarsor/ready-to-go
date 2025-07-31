@@ -78,6 +78,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8f52e236ecad04f8fa460498f22a65a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71fe0ebd440994903a5dd1ca3ff638a2, type: 2}
+    - target: {fileID: -4997746490456668403, guid: 8f52e236ecad04f8fa460498f22a65a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71fe0ebd440994903a5dd1ca3ff638a2, type: 2}
+    - target: {fileID: -1002720390829487883, guid: 8f52e236ecad04f8fa460498f22a65a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d51c48502a9da4de8895edf7b39d85d2, type: 2}
     - target: {fileID: 919132149155446097, guid: 8f52e236ecad04f8fa460498f22a65a3,
         type: 3}
       propertyPath: m_Name
@@ -87,6 +102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f52e236ecad04f8fa460498f22a65a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 6329584696371915957, guid: 8f52e236ecad04f8fa460498f22a65a3,
         type: 3}
@@ -110,6 +130,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6063345271378631690}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f52e236ecad04f8fa460498f22a65a3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7789971574424140223}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f52e236ecad04f8fa460498f22a65a3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5010418820417638071}
   m_SourcePrefab: {fileID: 100100000, guid: 8f52e236ecad04f8fa460498f22a65a3, type: 3}
 --- !u!1 &2475157009033879224 stripped
 GameObject:
@@ -146,3 +174,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bobHeight: 0.31
   bobDuration: 2.4
+--- !u!114 &7789971574424140223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2475157009033879224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd98aec6f55954d24a19738890752bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &5010418820417638071
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2475157009033879224}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.02321558
+  m_Height: 0.086178795
+  m_Direction: 1
+  m_Center: {x: -0.011624011, y: 0.03494613, z: 2.1752496e-11}

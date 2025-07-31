@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4893783284231799216}
   - component: {fileID: 2474354277993029788}
   - component: {fileID: 6113013184684644561}
+  - component: {fileID: 1892661274844101638}
+  - component: {fileID: 8020840769138448612}
   m_Layer: 3
   m_Name: item_Chopsticks
   m_TagString: Selectable
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5661763569357940403}
   serializedVersion: 2
   m_LocalRotation: {x: 0.9288035, y: 0.1479583, z: 0.2638601, w: -0.21403329}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -64,6 +66,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bobHeight: 0.35
   bobDuration: 2.13
+--- !u!114 &1892661274844101638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5661763569357940403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd98aec6f55954d24a19738890752bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &8020840769138448612
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5661763569357940403}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 3.39
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8381386039315412494
 PrefabInstance:
   m_ObjectHideFlags: 0

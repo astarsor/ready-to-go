@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
+using DG.Tweening;
 
 public class GetSelectionRaycast : MonoBehaviour
 {
@@ -12,14 +12,14 @@ public class GetSelectionRaycast : MonoBehaviour
     private Transform _selection;
     private Transform _highlight;
     private RaycastHit _raycastHit;
-
-    private RotateObjectOnHoldDown _objRotater;
     
     void Start()
     {
         cam = Camera.main;
     }
 
+    private ItemBobber _itemBobber;
+    private ItemHolderSpinner _itemSpinner;
     void Update()
     {
         if (_highlight != null)
@@ -28,28 +28,37 @@ public class GetSelectionRaycast : MonoBehaviour
             _highlight = null;
         }
 
-        Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue()); //Input.mouseposition
+        Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
 
         if (Physics.Raycast(ray, out _raycastHit, 500, selectableLayer.value))
         {
             _highlight = _raycastHit.transform;
 
-            if (_highlight != _selection && _highlight.gameObject.GetComponent<RotateObjectOnHoldDown>() != null)
+            // if (_highlight.gameObject.TryGetComponent<ItemBobber>(out ItemBobber grabbedBobber))
+            // {
+            //     _itemBobber = grabbedBobber;
+            // }
+
+
+            if (_highlight != _selection && _highlight.gameObject.CompareTag("Selectable"))
             {
-                // print("hovering on selectable object");
-
-
-                // if (_highlight.gameObject.GetComponent<RotateObjectOnHoldDown>() != null)
-                //     print("hovering on selectable object");
-                // else
-                //     print("no script attached");
+                Debug.Log("hovering on selectable");
+                if (_highlight.parent.TryGetComponent<ItemHolderSpinner>(out ItemHolderSpinner grabbedSpinner))
+                {
+                    _itemSpinner = grabbedSpinner;
+                    _itemSpinner.PauseTween();
+                }
 
                 // outline stuff goes here
             }
+            // else if (_itemSpinner != null)
+            // {
+            //     _itemSpinner.spinnerSequence.Play();
+            // }
             else
             {
+                _itemSpinner.PlayTween();
                 _highlight = null;
-                // print("looking...");
             }
         }
     }
@@ -66,7 +75,7 @@ public class GetSelectionRaycast : MonoBehaviour
 
             // SELECT
                 print("SELECTION: " + _selection);
-                _objRotater = _selection.gameObject.GetComponent<RotateObjectOnHoldDown>();
+                            // _objRotater = _selection.gameObject.GetComponent<RotateObjectOnHoldDown>();
                 _highlight = null;
             }
             else
@@ -82,15 +91,15 @@ public class GetSelectionRaycast : MonoBehaviour
         }
     }
 
-    public void RotateSelectedObject(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            _objRotater.holdingDown = true;
-        }
-        else if (ctx.canceled)
-        {
-            _objRotater.holdingDown = false;
-        }
-    }
+    // public void RotateSelectedObject(InputAction.CallbackContext ctx)
+    // {
+    //     if (ctx.performed)
+    //     {
+    //         _objRotater.holdingDown = true;
+    //     }
+    //     else if (ctx.canceled)
+    //     {
+    //         _objRotater.holdingDown = false;
+    //     }
+    // }
 }
