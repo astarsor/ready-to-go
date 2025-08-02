@@ -18,7 +18,7 @@ public class GetSelectionRaycast : MonoBehaviour
         cam = Camera.main;
     }
 
-    private ItemBobber _itemBobber;
+    private ItemTweens _itemBobber;
     private ItemHolderSpinner _itemSpinner;
     void Update()
     {
@@ -46,7 +46,7 @@ public class GetSelectionRaycast : MonoBehaviour
                 if (_highlight.parent.TryGetComponent<ItemHolderSpinner>(out ItemHolderSpinner grabbedSpinner))
                 {
                     _itemSpinner = grabbedSpinner;
-                    _itemSpinner.PauseTween();
+                    _itemSpinner.PauseSpinnerTween();
                 }
 
                 // outline stuff goes here
@@ -57,7 +57,7 @@ public class GetSelectionRaycast : MonoBehaviour
             // }
             else
             {
-                _itemSpinner.PlayTween();
+                _itemSpinner.PlaySpinnerTween();
                 _highlight = null;
             }
         }

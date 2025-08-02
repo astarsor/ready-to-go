@@ -20,7 +20,7 @@ public class ItemHolderSpinner : MonoBehaviour
     }
 
     private bool _called = false;
-    public void PauseTween()
+    public void PauseSpinnerTween()
     {
         if (_called == false)
         {
@@ -28,7 +28,7 @@ public class ItemHolderSpinner : MonoBehaviour
             spinnerSequence.Pause();
         }
     }
-    public void PlayTween()
+    public void PlaySpinnerTween()
     {
         if (_called == true)
         {

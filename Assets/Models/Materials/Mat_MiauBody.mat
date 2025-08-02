@@ -129,7 +129,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DiffuseStep: 0
+    - _DiffuseStep: -0.059
     - _DitherTexelSize: 1
     - _DitherThreshold: 1
     - _DstBlend: 0
@@ -157,12 +157,12 @@ Material:
     - _HalftoneFadeToColor: 0
     - _HalftoneNoiseClip: 0.8
     - _HalftoneTilling: 8
-    - _HatchingDensity: 1
+    - _HatchingDensity: 0.804
     - _HatchingDiffuseOffset: 0
-    - _HatchingDrawStrength: 1
-    - _HatchingEnabled: 0
+    - _HatchingDrawStrength: 2.81
+    - _HatchingEnabled: 1
     - _HatchingRotation: 0
-    - _HatchingSmoothness: 0.1
+    - _HatchingSmoothness: 0.3
     - _Metallic: 0
     - _Mode: 0
     - _NoiseScale: 1
@@ -210,7 +210,7 @@ Material:
     - _FaceRightDirection: {r: 1, g: 0, b: 0, a: 0}
     - _HairSpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _HalfToneColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HatchingColor: {r: 0.90588236, g: 0.6335228, b: 0.40392163, a: 1}
     - _OutlineColor: {r: 0.14509805, g: 0, b: 0.90588236, a: 1}
     - _OutlineDistancFade: {r: -25, g: 167.46033, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
