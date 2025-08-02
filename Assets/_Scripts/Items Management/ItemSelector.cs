@@ -46,7 +46,7 @@ public class ItemSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         for (int i = 0; i < _myItemData.descriptors.Length; i++)
         {
-            ResultsTracker.instance.AddToCount((int)_myItemData.descriptors[i].enumDescriptors, _myItemData.descriptors[i].value);
+            ResultsTracker.AddToCount((int)_myItemData.descriptors[i].enumDescriptors, _myItemData.descriptors[i].value);
         }
 
         _itemTweens.disposeSequence.Play();

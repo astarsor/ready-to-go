@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6e64dc1c944c44631a5994a51762f0f7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71fe0ebd440994903a5dd1ca3ff638a2, type: 2}
     - target: {fileID: 919132149155446097, guid: 6e64dc1c944c44631a5994a51762f0f7,
         type: 3}
       propertyPath: m_Name
@@ -131,6 +136,8 @@ MonoBehaviour:
   descriptors:
   - enumDescriptors: 6
     value: 1
+  - enumDescriptors: 4
+    value: 0.5
 --- !u!114 &5063922080818723252
 MonoBehaviour:
   m_ObjectHideFlags: 0

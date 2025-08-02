@@ -82,7 +82,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ba1d25c3e5c9a4a0ab1637cc6360837a, type: 2}
+      objectReference: {fileID: 2100000, guid: 71fe0ebd440994903a5dd1ca3ff638a2, type: 2}
     - target: {fileID: 919132149155446097, guid: e58c68ee867a64286afbc609b737996f,
         type: 3}
       propertyPath: m_Name
@@ -140,6 +140,8 @@ MonoBehaviour:
   descriptors:
   - enumDescriptors: 3
     value: 1
+  - enumDescriptors: 4
+    value: 0.5
 --- !u!114 &8818710959472786148
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,22 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent (typeof(ResultsCanvasManager))]
 public class ResultsTracker : MonoBehaviour
 {
-    public static ResultsTracker instance;
-    public Dictionary<EnumDescriptors, float> resultsTracker;
-    // public static UnityAction DoAddToCount;
+    public static Dictionary<EnumDescriptors, float> resultsTracker;
 
     void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
-    void Start()
     {
         resultsTracker = new Dictionary<EnumDescriptors, float>()
         {
@@ -28,38 +21,55 @@ public class ResultsTracker : MonoBehaviour
             {EnumDescriptors.playful, 0},
             {EnumDescriptors.cool, 0},
         };
+        
     }
 
-    public void AddToCount(int descriptorType, float val)
+    public static void AddToCount(int descriptorType, float val)
     {
         switch (descriptorType)
         {
-            case 0:
-                Debug.Log("adding a point for HONEST");
+            case 0: // HONEST
+                resultsTracker[EnumDescriptors.honest] += val;
                 break;
-            case 1:
-                Debug.Log("adding a point for WISE");
+            case 1: // WISE
+                resultsTracker[EnumDescriptors.wise] += val;
                 break;
-            case 2:
-                Debug.Log("adding a point for JOCK");
+            case 2: // JOCK
+                resultsTracker[EnumDescriptors.jock] += val;
                 break;
-            case 3:
-                Debug.Log("adding a point for ZEN");
+            case 3: // ZEN
+                resultsTracker[EnumDescriptors.zen] += val;
                 break;
-            case 4:
-                Debug.Log("adding a point for ROMANTIC");
+            case 4: // ROMANTIC
+                resultsTracker[EnumDescriptors.romantic] += val;
                 break;
-            case 5:
-                Debug.Log("adding a point for PLAYFUL");
+            case 5: // PLAYFUL
+                resultsTracker[EnumDescriptors.playful] += val;
                 break;
-            case 6:
-                Debug.Log("adding a point for COOL");
+            case 6: // COOL
+                resultsTracker[EnumDescriptors.cool] += val;
                 break;
         }
-        // big switch statement, 
-        // (int)enumDescriptor as case numbers
-        //      add DescriptorsHolder.value to... dictionary
     }
 
+    public Dictionary<EnumDescriptors, float> sortedTracker;
+
+    public void SortResultsTracker()
+    {
+        var sorted = resultsTracker.OrderByDescending(key => key.Value);
+        sortedTracker = sorted.ToDictionary(pair => pair.Key, pair => pair.Value);
+    }
+    public EnumDescriptors FirstResult()
+    {
+        return sortedTracker.ElementAt(0).Key;
+    }
+    public EnumDescriptors SecondResult()
+    {
+        return sortedTracker.ElementAt(1).Key;
+    }
+    public EnumDescriptors ThirdResult()
+    {
+        return sortedTracker.ElementAt(2).Key;
+    }
 
 }

@@ -14,13 +14,7 @@ public class ItemsManager : MonoBehaviour
         _itemPool = new List<GameObject>(_allItemsHolder.allItems);
     }
 
-    // void Start()
-    // {
-    //     InstantiateSelections();        
-    // }
-
-    // RANDOMIZER
-    [Space(5)]
+// RANDOMIZER
     private int _randInt;
     private GameObject _selectedItem;
 
@@ -53,7 +47,7 @@ public class ItemsManager : MonoBehaviour
 
             if (itemParents[i].transform.childCount == 0)
             {
-                Debug.Log("instantiating at: " + itemParents[i].name);
+                // Debug.Log("instantiating at: " + itemParents[i].name);
 
                 GameObject itemObj = Instantiate(newChoice);
                 itemObj.transform.parent = itemParents[i].transform;
@@ -63,14 +57,7 @@ public class ItemsManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("no room at " + itemParents[i].name + "!");
-
-                // Sequence instantiateSequence = DOTween.Sequence();
-                // instantiateSequence
-                //     .PrependCallback
-                //     (
-                //         () => itemParents[i].transform.GetChild(0).gameObject.GetComponent<ItemBobber>().disposeSequence.Play()
-                //     );
+                // Debug.Log("no room at " + itemParents[i].name + "!");
             }
         }
     }
@@ -78,7 +65,7 @@ public class ItemsManager : MonoBehaviour
     {
         for (int i = 0; i < itemParents.Length; i++)
         {
-            Debug.Log("making room at " + itemParents[i].name + "...");
+            // Debug.Log("making room at " + itemParents[i].name + "...");
             Destroy(itemParents[i].transform.GetChild(0).gameObject);
         }
     }

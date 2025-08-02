@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Unity.VisualScripting;
+using UnityEngine.Events;
 
 [DefaultExecutionOrder(0)]
 public class GameManager : MonoBehaviour
@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 [Space(5)]
     public float moveYDuration = 7f;
 
+    public static UnityAction OnShowResults;
     void Awake()
     {
         if (instance == null)
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
         quad2.SetActive(false);
 
         _cam = Camera.main;
-        _itemsManager = FindObjectOfType(typeof(ItemsManager)).GetComponent<ItemsManager>();
+        _itemsManager = GameObject.Find("Items Manager").GetComponent<ItemsManager>();
         roundNum = 0;
 
         _cam.transform.position = new Vector3(_cam.transform.position.x, -distanceToGameScene, _cam.transform.position.z);
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         if (readyForNextRound)
         {
-            if (roundNum < 5)
+            if (roundNum < 7)   // max rounds
             {
                 roundNum++;
                 Debug.Log("Proceeding to next round. Round: " + roundNum);
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 MoveToResults();
+                OnShowResults();
             }
             readyForNextRound = false;
         }
@@ -74,13 +76,13 @@ public class GameManager : MonoBehaviour
 
         roundNum++;
     }
-    
+
     public void MoveToResults() // call at end of Round 5
     {
         _cam.transform.DOMoveY(distanceToResultScene, moveYDuration)
             .SetEase(EaseFactory.StopMotion(universalFPS, Ease.InOutBack))
             .OnComplete(ShowResultsBG);
-        // probably add an OnComplete here?
+        // ^^^ call a sequence instead. that tweens the BG quad into quad2's position/rot
     }
     public void ShowResultsBG()
     {

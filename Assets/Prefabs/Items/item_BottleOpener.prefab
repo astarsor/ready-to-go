@@ -145,6 +145,8 @@ MonoBehaviour:
   descriptors:
   - enumDescriptors: 6
     value: 1
+  - enumDescriptors: 1
+    value: 0.5
 --- !u!114 &4980015441957150980
 MonoBehaviour:
   m_ObjectHideFlags: 0
